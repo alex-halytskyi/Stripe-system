@@ -1,0 +1,26 @@
+# Virtual environment
+*env*/
+
+# Migrations
+*/migrations/*
+!*/migrations/__init__.py
+
+# Python cache
+*/__pycache__/*
+*.pyc
+
+# All Loggers
+*.log
+
+# Database
+*.sqlite3
+
+# IDE
+.idea
+
+# Django environment | .env
+/stripe_project/.env
+
+# Mac OS X
+**/.DS_Store
+*.DS_Store

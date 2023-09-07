@@ -1,0 +1,60 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://js.stripe.com/v3/"></script>
+    <title>Stripe</title>
+</head>
+<body>
+    <div class="container">
+      <div class="added-email" style="">
+          Your email is
+          <span id="saved-email">user@gmail.com</span>
+      </div>
+      <div class="chat-cart__content" id="chat-cart-content">
+        <div class="chat-cart__purchase" id="1">
+          <div class="purchase__info">
+            <div class="purchase__description">
+              <p>Apskaita</p></div>
+          </div>
+          <div class="purchase__price" data-price="10">
+            <div class="purchase__count">
+              <button class="purchase__button count--remove">-</button>
+              <input class="purchase__price-field" type="text" value="1">
+              <button class="purchase__button count--add">+</button>
+            </div>
+            <p class="purchase__price-value">10 €</p>
+          </div>
+        </div>
+        <div class="chat-cart__purchase" id="2">
+          <div class="purchase__info">
+            <div class="purchase__description">
+              <p>Vadybiniai mokymai</p></div>
+          </div>
+          <div class="purchase__price" data-price="10">
+            <div class="purchase__count">
+              <button class="purchase__button count--remove">-</button>
+              <input class="purchase__price-field" type="text" value="2">
+              <button class="purchase__button count--add">+</button></div>
+            <p class="purchase__price-value">20 €</p>
+          </div>
+        </div>
+      </div>
+      <div class="cart-buy">
+          <div class="cart-buy__price">
+              <div class="sum"><span>Sum</span></div>
+              <div class="price"><span>30 €</span></div>
+          </div>
+          {% csrf_token %}
+          <div class="cart-buy__button"><button class="product__button button--buy">BUY</button></div>
+      </div>
+    </div>
+</body>
+<script src="{% static 'js/ajax.js' %}"></script>
+</html>
